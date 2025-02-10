@@ -1,11 +1,4 @@
-﻿//intructions: create an interger array with n elements provided by the user
-//promt user to input values for the array
-//print all elements of the array
-//caluate the sum of the array
-//find and pint the maxiumu and minimum in array
-//revers array
-using System.Net.Http.Headers;
-
+﻿using System.Net.Http.Headers;
 //decalres variable for new number for array
 int nNumber = 0;
 
@@ -24,10 +17,11 @@ int MinValue = Int32.MaxValue;
 //creates int array and makes it null so to slove for totalsum
 int[] UserArray = null;
 
+//decalres variable for reverser array
+int[] ReverseUserArray;
 
 while (true)
 {
-
 
     //use try and catch to make sure user input is valid
     try
@@ -38,8 +32,6 @@ while (true)
 
         //collects and coverts user input
         Userinput = Convert.ToInt32(Console.ReadLine());
-
-
 
         if (Userinput == 1)
         {
@@ -63,10 +55,6 @@ while (true)
                 UserArray[i] = Convert.ToInt32(Console.ReadLine());
 
             }
-            
-
-            
-
 
 
         }
@@ -75,28 +63,22 @@ while (true)
             //prints that user exits the program
             Console.WriteLine(" you have exited the program");
             break;
-
         }
-
-
 
     }
     catch (Exception ex)
     {
         //prints if user input is invalid
         Console.WriteLine(" user input was invalid please input a valid input ");
-
     }
 
 }
-
 
 //sloves for the total sum of the array
 for (int i = 0; i < UserArray.Length; i++)
 {
     totalsum += UserArray[i];
 }
-
 
 //sloves for max value
 for (int i = 0; i < UserArray.Length; i++)
@@ -125,14 +107,16 @@ for (int i = 0; i < UserArray.Length; i++)
 }
 
 //revers the aray
+ReverseUserArray = UserArray;
 
+Array.Reverse(ReverseUserArray);
 
 
 //prints out results
 Console.WriteLine(" results of the array");
 
 //prints all elements of the array
-//Console.WriteLine();
+Console.WriteLine(UserArray);
 
 //prints the total sum of the array
 Console.WriteLine( " that total sum of the array is ");
@@ -148,6 +132,6 @@ Console.WriteLine(MinValue);
 
 //prints the revers of the array
 Console.WriteLine(" the arry reversed is ");
-//Console.WriteLine();
+Console.WriteLine(ReverseUserArray);
 
 Console.ReadLine();
